@@ -11,7 +11,7 @@ class Manufacturer(models.Model):
         ordering = ("name",)
 
     def __str__(self):
-        return f"{self.name} {self.country}"
+        return self.name
 
 
 class Driver(AbstractUser):
@@ -22,8 +22,7 @@ class Driver(AbstractUser):
         ordering = ("username",)
 
     def __str__(self):
-        return (f"{self.username}: {self.first_name}"
-                f" {self.last_name}, {self.license_number}")
+        return self.username
 
 
 class Car(models.Model):
@@ -38,4 +37,4 @@ class Car(models.Model):
         ordering = ("model",)
 
     def __str__(self):
-        return f"{self.manufacturer} {self.model}"
+        return self.model
